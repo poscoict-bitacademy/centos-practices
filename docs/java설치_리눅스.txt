@@ -18,17 +18,14 @@
 6. 설치
    # mv java11 /usr/local/poscoict
 
-7. 링크 파일 생성
-   # ln -s /usr/local/poscoict/java11 /usr/local/poscoict/java
-
-8. 설정(/etc/profile)
+7. 설정(/etc/profile)
 
 # java
 export JAVA_HOME=/usr/local/poscoict/java11
 export CLASSPATH=$JAVA_HOME/lib/tools.jar
 export PATH=$PATH:$JAVA_HOME/bin
 
-9. 현재 shell 환경에 적용하기
+8. 현재 shell 환경에 적용하기
 # source /etc/profile
 
 9. 확인 작업
