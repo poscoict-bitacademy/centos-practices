@@ -7,19 +7,18 @@
    # tar xvfz apache-tomcat-8.5.65.tar.gz
 
 3. 설치
-   # mv apache-tomcat-8.5.65 /usr/local/douzone2021/tomcat8.5
-   # ln -s /usr/local/douzone2021/tomcat8.5 /usr/local/douzone2021/tomcat
+   # mv apache-tomcat-8.5.65 /usr/local/poscoict/tomcat8.5
 
 4. 설정(/etc/profile, 생략)
 
 
 5. 포트 확인
-   # vi /usr/local/douzone2021/tomcat/conf/server.xml
+   # vi /usr/local/poscoict/tomcat8.5/conf/server.xml
 
    8080 open 확인
 
 6. 실행
-   # /usr/local/douzone2021/tomcat/bin/catalina.sh start
+   # /usr/local/poscoict/tomcat8.5/bin/catalina.sh start
    # ps -ef | grep tomcat
    # ps -ef | grep java
 
@@ -27,7 +26,7 @@
    http://192.168.80.131:8080
 
 8. 중지 시키기
-   # /usr/local/douzone2021/tomcat/bin/catalina.sh stop
+   # /usr/local/poscoict/tomcat8.5/bin/catalina.sh stop
 
 9. 서비스 등록 하기
    /usr/lib/systemd/system/tomcat.service 파일 생성
@@ -40,7 +39,7 @@
 
 11. tomcat manager 설정
    1) tomcat-users.xml 설정
-      # vi /usr/local/douzone2021/tomcat/conf/tomcat-users.xml
+      # vi /usr/local/poscoict/tomcat8.5/conf/tomcat-users.xml
 
 ========================================================
 <tomcat-users>
@@ -56,7 +55,7 @@
 
 </tomcat-users>
 ========================================================
-   2) /usr/local/douzone2021/tomcat/webapps/manager/META-INF/context.xml
+   2) /usr/local/douzone2021/tomcat8.5/webapps/manager/META-INF/context.xml
 ========================================================
  주석 처리
 <Context>
@@ -76,7 +75,7 @@
     # ps -ef | grep tomcat
     # systemctl start tomcat
 
-13. http://192.168.80.131/manager
+13. http://192.168.0.51/manager
 
 
 
