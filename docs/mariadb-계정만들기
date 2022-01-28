@@ -1,0 +1,34 @@
+mariadb 사용자 생성/권한 부여 (DCL)
+
+1. webdb database 새성
+
+MariaDB [(none)]> create database webdb;
+
+2. linux 서버 local 접속 계정
+1) user 생성
+    MariaDB [(none)]> create user 'webdb'@'localhost' identified by 'webdb';
+
+2)권한 부여
+    MariaDB [(none)]> grant all privileges on webdb.* to 'webdb'@'localhost';
+	
+3) 새 변경사항 적용
+    MariaDB [(none)]> flush privileges;
+
+4) 테스트
+    # mysql -u webdb -D webdb -p
+
+
+3. 특정 IP의 접속 계정
+
+1) user 생성
+    MariaDB [(none)]> create user 'webdb'@'192.168.0.%' identified by 'webdb';
+
+2)권한 부여
+    MariaDB [(none)]> grant all privileges on webdb.* to 'webdb'@'192.168.0.%';
+	
+3) 새 변경사항 적용
+    MariaDB [(none)]> flush privileges;
+
+4) 테스트
+     windows의 workbench 에서....
+
